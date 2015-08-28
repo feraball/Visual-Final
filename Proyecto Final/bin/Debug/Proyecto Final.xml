@@ -6,19 +6,7 @@ ProyectoFinal
 </name>
 </assembly>
 <members>
-<member name="M:Proyecto_Final.Application.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="M:Proyecto_Final.Application.Main">
-	<summary>
-Application Entry Point.
-</summary>
-</member><member name="T:Proyecto_Final.Application">
-	<summary>
-Application
-</summary>
-</member><member name="M:Proyecto_Final.MainWindow.InitializeComponent">
+<member name="M:Proyecto_Final.MainWindow.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
@@ -33,6 +21,26 @@ InitializeComponent
 </member><member name="T:Proyecto_Final.RegistroUsuario">
 	<summary>
 RegistroUsuario
+</summary>
+</member><member name="M:Proyecto_Final.Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:Proyecto_Final.Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:Proyecto_Final.Application">
+	<summary>
+Application
+</summary>
+</member><member name="M:Proyecto_Final.VentanaCliente.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Final.VentanaCliente">
+	<summary>
+VentanaCliente
 </summary>
 </member><member name="P:Proyecto_Final.My.Resources.Resources.ResourceManager">
 	<summary>

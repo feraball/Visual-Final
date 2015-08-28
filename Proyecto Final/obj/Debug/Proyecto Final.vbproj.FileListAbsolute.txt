@@ -36,3 +36,21 @@ G:\ESPOL\Visual\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.exe.confi
 G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.exe
 G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.xml
 G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.pdb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.xml
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\MainWindow.baml
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\RegistroUsuario.baml
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\VentanaCliente.baml
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\MainWindow.g.vb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\RegistroUsuario.g.vb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\VentanaCliente.g.vb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Application.g.vb
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.cache
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.g.resources
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
+C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache

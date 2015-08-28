@@ -1,0 +1,13 @@
+﻿<Window x:Class="VentanaCliente"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="VentanaCliente" Height="334" Width="565">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="557">
+            <MenuItem Header="Tareas Cliente">
+                <MenuItem Header="Listar Categoría de Platillos"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
