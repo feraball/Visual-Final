@@ -1,0 +1,38 @@
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\bin\Debug\Proyecto Final.exe
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\bin\Debug\Proyecto Final.pdb
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\bin\Debug\Proyecto Final.xml
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\MainWindow.baml
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\MainWindow.g.vb
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Application.g.vb
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.cache
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final.g.resources
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final.exe
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final.xml
+C:\Users\Andres\AppData\Local\Temporary Projects\Proyecto Final\obj\Debug\Proyecto Final.pdb
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.exe
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.pdb
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.xml
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\MainWindow.baml
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\MainWindow.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Application.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.cache
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.g.resources
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\RegistroUsuario.baml
+D:\UVERfan\Documentos\ESPOL\EDCOM\2015-I\PV\Proyectos\Proyecto Final\Proyecto Final\obj\Debug\RegistroUsuario.g.vb
+F:\ESPOL\Visual\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+F:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+F:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+F:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+G:\ESPOL\Visual\Proyecto Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+G:\ESPOL\Visual\Proyecto Final\Proyecto Final\obj\Debug\Proyecto Final.pdb

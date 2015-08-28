@@ -1,0 +1,39 @@
+﻿<Window x:Name="frmRegistroUsuario" x:Class="RegistroUsuario"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Registro de Usuarios" Height="300" Width="300" Icon="Assets/cata-icon.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF09AED3" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="4"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.Row="4"/>
+        <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbbRol" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="3" SelectedIndex="0">
+            <ComboBoxItem Content="Cliente"/>
+            <ComboBoxItem Content="Asistente"/>
+            <ComboBoxItem Content="Administrador"/>
+        </ComboBox>
+        <Label x:Name="lblUser" Content="Usuario:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+        <Label x:Name="lblPass" Content="Contraseña:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Row="1"/>
+        <Label x:Name="lblNombre" Content="Nombre:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Row="2"/>
+        <Label x:Name="lblRol" Content="Rol:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Row="3"/>
+
+    </Grid>
+</Window>
