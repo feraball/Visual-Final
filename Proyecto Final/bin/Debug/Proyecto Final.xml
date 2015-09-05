@@ -18,14 +18,6 @@ Application Entry Point.
 	<summary>
 Application
 </summary>
-</member><member name="M:Proyecto_Final.RegistroUsuario.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="T:Proyecto_Final.RegistroUsuario">
-	<summary>
-RegistroUsuario
-</summary>
 </member><member name="M:Proyecto_Final.VentanaCliente.InitializeComponent">
 	<summary>
 InitializeComponent
