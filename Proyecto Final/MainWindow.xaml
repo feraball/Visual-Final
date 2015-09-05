@@ -20,7 +20,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnLogin" Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Grid.Row="2" Height="26" FontSize="16" Margin="0"/>
+                    <Button x:Name="btnLogin" Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="2" Height="36" FontSize="16" Margin="0" Padding="1" FontWeight="Bold"/>
                     <TextBox x:Name="txtUser" HorizontalAlignment="Center" Height="36" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Width="250" VerticalContentAlignment="Center" FontSize="18" Foreground="White" Background="#FF4D4D4D" Text="usuario" Padding="0" BorderThickness="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontWeight="Bold" BorderBrush="#FFABADB3"/>
                     <PasswordBox x:Name="txtPass" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="250" Height="36" Grid.Row="1" VerticalContentAlignment="Center" FontSize="18" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Password="visual"/>
                 </Grid>
@@ -38,16 +38,16 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="76" Height="20" Grid.Row="4"/>
+                    <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="100" Height="30" Grid.Row="4" FontSize="16" FontWeight="Bold"/>
                     <TextBox x:Name="txtNewUser" HorizontalAlignment="Left" Height="26" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="136" VerticalContentAlignment="Center" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Padding="0" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" Grid.Column="1"/>
                     <TextBox x:Name="txtNewName" HorizontalAlignment="Left" Height="26" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="136" VerticalContentAlignment="Center" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Padding="0" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="3"/>
                     <Label x:Name="lblUser" Content="Usuario:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="26" Width="160" HorizontalContentAlignment="Right" Foreground="White" FontSize="14" FontWeight="Bold"/>
                     <Label x:Name="lblPass1" Content="Contraseña:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="26" Width="160" HorizontalContentAlignment="Right" Foreground="White" FontSize="14" FontWeight="Bold" Grid.Row="1"/>
                     <Label x:Name="lblNombre" Content="Nombre:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="26" Width="160" HorizontalContentAlignment="Right" Foreground="White" FontSize="14" FontWeight="Bold" Grid.Row="3"/>
-                    <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="74" Height="20" Grid.Column="1" Grid.Row="4"/>
+                    <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="100" Height="30" Grid.Column="1" Grid.Row="4" FontSize="16" FontWeight="Bold"/>
                     <Label x:Name="lblPass2" Content="Confirmar contraseña:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="26" Width="160" HorizontalContentAlignment="Right" Foreground="White" FontSize="14" FontWeight="Bold" Grid.Row="2"/>
                     <PasswordBox x:Name="txtNewPass1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="136" Height="26" VerticalContentAlignment="Center" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Padding="0" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-                    <PasswordBox x:Name="txtNewPass2" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="136" Height="26" VerticalContentAlignment="Center" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Padding="0" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                    <PasswordBox x:Name="txtNewPass2" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="136" Height="26" VerticalContentAlignment="Center" Background="#FF4D4D4D" Foreground="White" BorderThickness="0" Padding="0" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" IsEnabled="False"/>
                     <Image x:Name="imgPass1" HorizontalAlignment="Right" Height="30" Margin="0,0,10,0" VerticalAlignment="Center" Width="30" Source="Assets/check.png" Grid.Column="1" Grid.Row="1" Visibility="Hidden"/>
                     <Image x:Name="imgPass2" HorizontalAlignment="Right" Height="30" Margin="0,0,10,0" VerticalAlignment="Center" Width="30" Source="Assets/check.png" Grid.Column="1" Grid.Row="2" Visibility="Hidden"/>
                 </Grid>
