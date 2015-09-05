@@ -54,3 +54,21 @@ C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\ob
 C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.g.resources
 C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
 C:\Users\ESTUDIANTE\Documents\GitHub\Visual Final\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.pdb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.xml
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\MainWindow.baml
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\RegistroUsuario.baml
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\VentanaCliente.baml
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\MainWindow.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\RegistroUsuario.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\VentanaCliente.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Application.g.vb
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.cache
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.g.resources
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
+D:\UVERfan\Documentos\ESPOL\EDCOM\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache

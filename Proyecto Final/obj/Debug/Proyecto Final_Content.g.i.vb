@@ -11,5 +11,6 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/cata-icon.ico")> 
+<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/check.png"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/error.png")> 
 
