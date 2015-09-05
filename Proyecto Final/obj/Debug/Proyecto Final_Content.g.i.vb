@@ -11,6 +11,7 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/check.png"),  _
- Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/error.png")> 
+<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/save.png"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/search.png"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/users.png")> 
 

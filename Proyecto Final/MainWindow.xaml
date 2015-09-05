@@ -11,8 +11,9 @@
         </Grid.ColumnDefinitions>
         <TabControl x:Name="tabContenedor" Margin="0" BorderThickness="0">
             <TabItem x:Name="timTab1" Header="Inicio de Sesión">
-                <Grid Background="Black">
+                <Grid Background="Black" Margin="0">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -20,9 +21,10 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnLogin" Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="2" Height="36" FontSize="16" Margin="0" Padding="1" FontWeight="Bold"/>
-                    <TextBox x:Name="txtUser" HorizontalAlignment="Center" Height="36" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Width="250" VerticalContentAlignment="Center" FontSize="18" Foreground="#FF969696" Background="#FF4D4D4D" Text="usuario" Padding="0" BorderThickness="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontWeight="Bold" BorderBrush="#FFABADB3"/>
-                    <PasswordBox x:Name="txtPass" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="250" Height="36" Grid.Row="1" VerticalContentAlignment="Center" FontSize="18" Background="#FF4D4D4D" Foreground="#FF969696" BorderThickness="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Password="visual"/>
+                    <Button x:Name="btnLogin" Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Grid.Row="3" Height="36" FontSize="16" Margin="0" Padding="1" FontWeight="Bold"/>
+                    <TextBox x:Name="txtUser" HorizontalAlignment="Center" Height="36" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" VerticalContentAlignment="Center" FontSize="18" Foreground="#FF969696" Background="#FF4D4D4D" Text="usuario" Padding="0" BorderThickness="0" HorizontalContentAlignment="Center" FontWeight="Bold" BorderBrush="#FFABADB3" Grid.Row="1"/>
+                    <PasswordBox x:Name="txtPass" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="200" Height="36" Grid.Row="2" VerticalContentAlignment="Center" FontSize="18" Background="#FF4D4D4D" Foreground="#FF969696" BorderThickness="0" HorizontalContentAlignment="Center" Password="visual"/>
+                    <Image HorizontalAlignment="Center" Height="100" Margin="0" VerticalAlignment="Center" Width="100" Source="Assets/users.png"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="timTab2" Header="Registro de Clientes">

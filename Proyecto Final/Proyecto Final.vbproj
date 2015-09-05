@@ -145,5 +145,10 @@
     <Resource Include="Assets\check.png" />
     <Resource Include="Assets\error.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\save.png" />
+    <Resource Include="Assets\search.png" />
+    <Resource Include="Assets\users.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
