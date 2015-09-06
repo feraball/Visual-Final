@@ -1,15 +1,41 @@
-﻿Class MainWindow 
+﻿Imports System.Data.OleDb
+Imports System.Data
 
+Class MainWindow
     Private ventanaUser As VentanaUsuario
     Dim imagenCorrecto As BitmapImage = New BitmapImage(New Uri("Assets/check.png", UriKind.Relative))
     Dim imagenError As BitmapImage = New BitmapImage(New Uri("Assets/error.png", UriKind.Relative))
 
-    Private Sub btnLogin_Click(sender As Object, e As RoutedEventArgs) Handles btnLogin.Click
-        ventanaUser = New VentanaUsuario
-        ventanaUser.Owner = Me
-        ventanaUser.Show()
-        Me.Hide()
+    Public datos As New DataSet("Datos")
+    Dim dbPath As String = "D:\restaurantes.mdb"
+    Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
+    Private Sub frmLogin_Loaded(sender As Object, e As RoutedEventArgs) Handles frmLogin.Loaded
+        Using conexion As New OleDbConnection(strConexion)
+            Dim consulta As String = "SELECT * FROM usuarios;"
+            Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            adapter.Fill(datos, "usuarios")
+        End Using
+    End Sub
+
+    Private Sub btnLogin_Click(sender As Object, e As RoutedEventArgs) Handles btnLogin.Click
+
+        For Each fila As DataRow In datos.Tables("usuarios").Rows
+            If fila.Item(1) = txtUser.Text And fila.Item(2) = txtPass.Password Then
+                ventanaUser = New VentanaUsuario
+                ventanaUser.Owner = Me
+                ventanaUser.Show()
+                Me.Hide()
+                Exit Sub
+            End If
+        Next
+
+        MessageBox.Show("El usuario y/o contraseña es/son incorrectos", "Login Error", MessageBoxButton.OK, MessageBoxImage.Error)
+        txtUser.Text = ""
+        txtPass.Password = ""
+        txtUser_LostFocus(txtUser, New RoutedEventArgs)
+        txtPass_LostFocus(txtPass, New RoutedEventArgs)
+        txtUser.Focus()
     End Sub
 
     Private Sub txtUser_GotFocus(sender As Object, e As RoutedEventArgs) Handles txtUser.GotFocus
@@ -107,5 +133,27 @@
         imgPass1.Visibility = Windows.Visibility.Hidden
         imgPass2.Visibility = Windows.Visibility.Hidden
         txtNewName.Text = String.Empty
+    End Sub
+
+
+    Private Sub btnRegistrar_Click(sender As Object, e As RoutedEventArgs) Handles btnRegistrar.Click
+        If txtNewPass1.Password = txtNewPass2.Password Then
+            datos.Tables("usuarios").Rows.Add(datos.Tables("usuarios").Rows.Count + 1, txtNewUser.Text, txtNewPass2.Password, txtNewName.Text, 3)
+
+            Using conexion As New OleDbConnection(strConexion)
+                Dim consulta As String = "SELECT * FROM usuarios;"
+                Dim adapter As New OleDbDataAdapter(consulta, conexion)
+
+                Dim personaCmdBuilder = New OleDbCommandBuilder(adapter)
+
+                Try
+                    adapter.Update(datos.Tables("usuarios"))
+                    MessageBox.Show("Cliente Agregado Correctamente!", "Nuevo Cliente", MessageBoxButton.OK, MessageBoxImage.Information)
+                    tabContenedor.SelectedIndex = 0
+                Catch ex As Exception
+                    MessageBox.Show("Error al guardar")
+                End Try
+            End Using
+        End If
     End Sub
 End Class
