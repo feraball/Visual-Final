@@ -6,7 +6,15 @@ ProyectoFinal
 </name>
 </assembly>
 <members>
-<member name="M:Proyecto_Final.Application.InitializeComponent">
+<member name="M:Proyecto_Final.VentanaUsuario.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Final.VentanaUsuario">
+	<summary>
+VentanaUsuario
+</summary>
+</member><member name="M:Proyecto_Final.Application.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
@@ -17,14 +25,6 @@ Application Entry Point.
 </member><member name="T:Proyecto_Final.Application">
 	<summary>
 Application
-</summary>
-</member><member name="M:Proyecto_Final.VentanaCliente.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="T:Proyecto_Final.VentanaCliente">
-	<summary>
-VentanaCliente
 </summary>
 </member><member name="M:Proyecto_Final.MainWindow.InitializeComponent">
 	<summary>

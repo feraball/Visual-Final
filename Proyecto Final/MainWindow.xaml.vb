@@ -1,13 +1,13 @@
 ﻿Class MainWindow 
 
-    Private ventanaCliente As VentanaCliente
+    Private ventanaUser As VentanaUsuario
     Dim imagenCorrecto As BitmapImage = New BitmapImage(New Uri("Assets/check.png", UriKind.Relative))
     Dim imagenError As BitmapImage = New BitmapImage(New Uri("Assets/error.png", UriKind.Relative))
 
     Private Sub btnLogin_Click(sender As Object, e As RoutedEventArgs) Handles btnLogin.Click
-        ventanaCliente = New VentanaCliente
-        ventanaCliente.Owner = Me
-        ventanaCliente.Show()
+        ventanaUser = New VentanaUsuario
+        ventanaUser.Owner = Me
+        ventanaUser.Show()
         Me.Hide()
 
     End Sub
