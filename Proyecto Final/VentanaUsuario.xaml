@@ -17,20 +17,21 @@
             <ColumnDefinition Width="220*"/>
         </Grid.ColumnDefinitions>
         <Menu Grid.ColumnSpan="3">
-            <MenuItem x:Name="mitMenuArchivo" Header="Archivo">
-                <MenuItem x:Name="mitNewPlatillo" Header="Nuevo Platillo"/>
-                <MenuItem Header="Importar/Exportar XML" HorizontalAlignment="Left" Width="228"/>
-                <MenuItem Header="Cargar/Guardar BD"/>
-                <MenuItem x:Name="mitCerrar" Header="Cerrar Sesión"/>
-                <MenuItem x:Name="mitSalir" Header="Salir del Sistema..."/>
+            <MenuItem x:Name="menu_MenuArchivo" Header="Archivo">
+                <MenuItem x:Name="menu_NewPlatillo" Header="Nuevo Platillo"/>
+                <MenuItem x:Name="menu_importarXml" Header="Importar/Exportar XML" HorizontalAlignment="Left" Width="228"/>
+                <MenuItem x:Name="menu_cargarBd" Header="Cargar/Guardar BD"/>
+                <MenuItem x:Name="menu_cerrarSesion" Header="Cerrar Sesión"/>
+                <MenuItem x:Name="menu_Salir" Header="Salir del Sistema..."/>
             </MenuItem>
-            <MenuItem x:Name="mitMenuEditar" Header="Editar">
-                <MenuItem Header="Buscar Platillo"/>
-                <MenuItem Header="Listar...">
-                    <MenuItem Header="Listar Categorías"/>
-                    <MenuItem Header="Listar Platillos"/>
+            <MenuItem x:Name="menu_MenuEditar" Header="Editar">
+                <MenuItem x:Name="menu_buscarPlatillo" Header="Buscar Platillo"/>
+                <MenuItem x:Name="menu_Listar" Header="Listar...">
+                    <MenuItem x:Name="menu_listarCategorias" Header="Listar Categorías"/>
+                    <MenuItem x:Name="menu_listarPlatillos" Header="Listar Platillos"/>
+                    <MenuItem x:Name="menu_listarRestaurantes" Header="Listar Restaurantes"/>
                 </MenuItem>
-                <MenuItem Header="Editar Platillo"/>
+                <MenuItem x:Name="menu_editarPlatillo" Header="Editar Platillo"/>
             </MenuItem>
             <MenuItem x:Name="mitMenuAyuda" Header="Ayuda">
                 <MenuItem x:Name="mitAcercaDe" Header="Acerca de..."/>
@@ -46,6 +47,8 @@
         <Label x:Name="lblTipoUsuario" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
         <Label x:Name="lblNombreUsuario" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
         <Label x:Name="lblRestauranteUsuario" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
+        <DataGrid x:Name="dtgRestaurantes" Margin="10,64,10,10" Grid.Row="5" Grid.ColumnSpan="3" ItemsSource="{Binding Path=restaurantes}"/>
+        <Label x:Name="lbl_listaResta" Content="Lista de Restaurantes" Grid.Column="1" Margin="34,0,19,0" Grid.Row="5"/>
 
     </Grid>
 </Window>

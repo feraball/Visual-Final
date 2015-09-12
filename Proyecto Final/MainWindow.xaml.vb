@@ -7,7 +7,8 @@ Class MainWindow
     Dim imagenError As BitmapImage = New BitmapImage(New Uri("Assets/error.png", UriKind.Relative))
 
     Public datos As New DataSet("Datos")
-    Dim dbPath As String = "D:\restaurantes.mdb"
+    'Dim dbPath As String = "D:\restaurantes.mdb"
+    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private Sub frmLogin_Loaded(sender As Object, e As RoutedEventArgs) Handles frmLogin.Loaded
@@ -23,6 +24,7 @@ Class MainWindow
         For Each fila As DataRow In datos.Tables("usuarios").Rows
             If fila.Item(1) = txtUser.Text And fila.Item(2) = txtPass.Password Then
                 ventanaUser = New VentanaUsuario
+                ventanaUser.tipUsu = fila.Item(4)
                 ventanaUser.Owner = Me
                 ventanaUser.Show()
                 Me.Hide()
