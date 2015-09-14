@@ -57,7 +57,7 @@ Public Class VentanaUsuario
         dtgRestaurantes.Visibility = Windows.Visibility.Visible
         lbl_listaResta.Visibility = Windows.Visibility.Visible
         Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "SELECT r.nombre as Nombre, r.direccion as Dirección, r.telefono as Teléfono, r.duenio as Dueño FROM restaurantes r;"
+            Dim consulta As String = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
             Dim adapter As New OleDbDataAdapter(consulta, conexion)
 
             Dim datos As New DataSet("Datos")
@@ -92,5 +92,20 @@ Public Class VentanaUsuario
 
     Private Sub frmVentanaUsuario_Closed(sender As Object, e As EventArgs) Handles frmVentanaUsuario.Closed
         End
+    End Sub
+
+    Private Sub dtgRestaurantes_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgRestaurantes.SelectionChanged
+        Dim fila As DataRowView = sender.SelectedItem
+        'MessageBox.Show(fila("FirstName") & " - " & fila("EmployeeID"))
+
+        Dim ventanaPlatillos As New VentanaPlatilosPorRestaurante
+        ventanaPlatillos.Owner = Me
+
+        Dim resta As New Restaurante(fila("id"))
+        ventanaPlatillos.DataContext = resta
+
+
+        ventanaPlatillos.Show()
+        Me.Hide()
     End Sub
 End Class

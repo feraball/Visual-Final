@@ -34,6 +34,14 @@ Application Entry Point.
 	<summary>
 Application
 </summary>
+</member><member name="M:Proyecto_Final.VentanaPlatilosPorRestaurante.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Final.VentanaPlatilosPorRestaurante">
+	<summary>
+VentanaPlatilosPorRestaurante
+</summary>
 </member><member name="P:Proyecto_Final.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
