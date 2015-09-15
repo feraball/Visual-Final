@@ -1,5 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports System.Data
+Imports Microsoft.Win32
 
 Public Class VentanaUsuario
 
@@ -15,8 +16,11 @@ Public Class VentanaUsuario
         End Set
     End Property
 
-    Dim dbPath As String = "D:\restaurantes.mdb"
-    ' Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    ' Dim dbPath As String = "D:\restaurantes.mdb"
+    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    Dim adapter2 As New OleDbDataAdapter
+    Dim dbPath2 As String = ""
+    Dim datos As New DataSet("Datos")
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
     Private Sub mitSalir_Click(sender As Object, e As RoutedEventArgs) Handles menu_Salir.Click
         End
@@ -58,10 +62,11 @@ Public Class VentanaUsuario
         lbl_listaResta.Visibility = Windows.Visibility.Visible
         Using conexion As New OleDbConnection(strConexion)
             Dim consulta As String = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
-            Dim adapter As New OleDbDataAdapter(consulta, conexion)
 
-            Dim datos As New DataSet("Datos")
-            adapter.Fill(datos, "restaurantes")
+            Dim comando As OleDbCommand = New OleDbCommand(consulta, conexion)
+            adapter2.SelectCommand = comando
+
+            adapter2.Fill(datos, "restaurantes")
 
             dtgGrillaDatos.Visibility = Windows.Visibility.Hidden
             dtgRestaurantes.DataContext = datos
@@ -127,4 +132,45 @@ Public Class VentanaUsuario
     Private Sub dtgGrillaDatos_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgGrillaDatos.SelectionChanged
 
     End Sub
+
+    Private Sub menu_importarXml_Click(sender As Object, e As RoutedEventArgs) Handles menu_importarXml.Click
+
+        Dim openFile As New OpenFileDialog
+        openFile.Filter = "Archivos de imágen (.mdb)|*.mdb|All Files (*.*)|*.*"
+        openFile.Title = "Seleccione la Imagen a Mostrar"
+
+        If (openFile.ShowDialog() = True) Then
+
+            dbPath2 = openFile.FileName
+
+        End If
+        lbl_newBD.Content = dbPath2
+        llenarBaseNueva()
+
+    End Sub
+
+
+    Private Sub llenarBaseNueva()
+
+        Dim strConexion2 As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath2
+
+        lbl_listaResta.Visibility = Windows.Visibility.Hidden
+        dtgGrillaDatos.Visibility = Windows.Visibility.Hidden
+
+        Using conexion As New OleDbConnection(strConexion2)
+            Dim consulta As String = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
+            Dim comando2 As OleDbCommand = New OleDbCommand(consulta, conexion)
+            adapter2.SelectCommand = comando2
+
+            'Dim datos As New DataSet("Datos")
+            adapter2.Fill(datos, "restaurantes")
+
+
+
+            dtgRestaurantes.Visibility = Windows.Visibility.Visible
+            dtgRestaurantes.DataContext = datos
+        End Using
+
+    End Sub
+
 End Class

@@ -57,6 +57,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbl_listaResta" Content="Lista de Restaurantes" Grid.Column="1" Margin="34,0,19,0" Grid.Row="5"/>
+        <Label x:Name="lbl_newBD" Content="Cero" HorizontalAlignment="Left" Margin="34,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Grid.RowSpan="2" Width="517" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

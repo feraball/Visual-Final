@@ -112,3 +112,9 @@ C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcio
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcionPlatillo.g.vb
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.baml
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.g.vb
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.baml
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.baml
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcionPlatillo.baml
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.g.vb
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.g.vb
+C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcionPlatillo.g.vb
