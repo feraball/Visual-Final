@@ -45,10 +45,10 @@ Public Class VentanaUsuario
             Dim consulta As String = "SELECT u.nombre, tu.tipo FROM usuarios u INNER JOIN tipoUsuario tu ON u.rol = tu.id;"
             Dim adapter As New OleDbDataAdapter(consulta, conexion)
 
-            Dim datos As New DataSet("Datos")
-            adapter.Fill(datos, "usuarios")
+            Dim datos2 As New DataSet("Datos")
+            adapter.Fill(datos2, "usuarios")
 
-            dtgGrillaDatos.DataContext = datos
+            dtgGrillaDatos.DataContext = datos2
         End Using
     End Sub
 
@@ -145,12 +145,12 @@ Public Class VentanaUsuario
 
         End If
         lbl_newBD.Content = dbPath2
-        llenarBaseNueva()
+        llenarDatosBaseNueva()
 
     End Sub
 
 
-    Private Sub llenarBaseNueva()
+    Private Sub llenarDatosBaseNueva()
 
         Dim strConexion2 As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath2
 
@@ -169,7 +169,13 @@ Public Class VentanaUsuario
 
             dtgRestaurantes.Visibility = Windows.Visibility.Visible
             dtgRestaurantes.DataContext = datos
+            guardarBase()
         End Using
+
+    End Sub
+    Private Sub guardarBase()
+
+
 
     End Sub
 
