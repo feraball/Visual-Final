@@ -2,8 +2,8 @@
 Imports System.Data
 
 Public Class VentanaPlatilosPorRestaurante
-
-    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    Dim dbPath As String = "D:\restaurantes.mdb"
+    'Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
@@ -29,5 +29,9 @@ Public Class VentanaPlatilosPorRestaurante
 
     Private Sub frmVentanaPlatillos_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles frmVentanaPlatillos.Closing
         End
+    End Sub
+
+    Private Sub dtgPlatillosPorResta_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgPlatillosPorResta.SelectionChanged
+
     End Sub
 End Class

@@ -7,8 +7,8 @@ Class MainWindow
     Dim imagenError As BitmapImage = New BitmapImage(New Uri("Assets/error.png", UriKind.Relative))
 
     Public datos As New DataSet("Datos")
-    'Dim dbPath As String = "D:\restaurantes.mdb"
-    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    Dim dbPath As String = "D:\restaurantes.mdb"
+    'Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
 
     Private Sub frmLogin_Loaded(sender As Object, e As RoutedEventArgs) Handles frmLogin.Loaded
@@ -157,5 +157,9 @@ Class MainWindow
                 End Try
             End Using
         End If
+    End Sub
+
+    Private Sub txtUser_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtUser.TextChanged
+
     End Sub
 End Class

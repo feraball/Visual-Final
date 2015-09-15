@@ -68,6 +68,9 @@
     </ApplicationDefinition>
     <Compile Include="Restaurante.vb" />
     <Compile Include="Usuario.vb" />
+    <Compile Include="VentanaClienteListar.xaml.vb">
+      <DependentUpon>VentanaClienteListar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPlatilosPorRestaurante.xaml.vb">
       <DependentUpon>VentanaPlatilosPorRestaurante.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VentanaClienteListar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaPlatilosPorRestaurante.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

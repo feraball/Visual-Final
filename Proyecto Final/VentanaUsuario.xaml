@@ -24,7 +24,7 @@
                 <MenuItem x:Name="menu_cerrarSesion" Header="Cerrar Sesión"/>
                 <MenuItem x:Name="menu_Salir" Header="Salir del Sistema..."/>
             </MenuItem>
-            <MenuItem x:Name="menu_MenuEditar" Header="Editar">
+            <MenuItem x:Name="menu_MenuEditar" Header="Herramientas">
                 <MenuItem x:Name="menu_buscarPlatillo" Header="Buscar Platillo"/>
                 <MenuItem x:Name="menu_Listar" Header="Listar...">
                     <MenuItem x:Name="menu_listarCategorias" Header="Listar Categorías"/>

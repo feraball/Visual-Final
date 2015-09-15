@@ -88,3 +88,23 @@ C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\
 C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
 C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaPlatilosPorRestaurante.baml
 C:\Users\Carlos Leon\Desktop\VISUAL FINAL\Visual-Final\Proyecto Final\obj\Debug\VentanaPlatilosPorRestaurante.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe.config
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.exe
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.xml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.pdb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.pdb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.xml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\MainWindow.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaPlatilosPorRestaurante.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaUsuario.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\MainWindow.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaPlatilosPorRestaurante.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaUsuario.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Application.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.cache
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.g.resources
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto_Final.Resources.resources
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.g.vb

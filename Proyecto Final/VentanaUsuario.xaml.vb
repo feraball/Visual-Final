@@ -15,8 +15,8 @@ Public Class VentanaUsuario
         End Set
     End Property
 
-
-    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    Dim dbPath As String = "D:\restaurantes.mdb"
+    ' Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
     Private Sub mitSalir_Click(sender As Object, e As RoutedEventArgs) Handles menu_Salir.Click
         End
@@ -107,5 +107,21 @@ Public Class VentanaUsuario
 
         ventanaPlatillos.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub menu_MenuEditar_Click(sender As Object, e As RoutedEventArgs) Handles menu_MenuEditar.Click
+
+    End Sub
+
+    Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_Listar.Click
+        Dim ventanaClienteList As New VentanaClienteListar
+        ventanaClienteList.Owner = Me
+        ventanaClienteList.Show()
+
+
+    End Sub
+
+    Private Sub dtgGrillaDatos_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgGrillaDatos.SelectionChanged
+
     End Sub
 End Class
