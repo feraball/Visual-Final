@@ -1,0 +1,29 @@
+﻿<Window x:Class="VentanaBuscarPlatillo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="VentanaBuscarPlatillo" Height="301" Width="338">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="55*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblIngreseNombre" Content="Ingrese el nombre o la descripción del platillo a buscar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="329"/>
+        <TextBox x:Name="txtBusqueda" HorizontalAlignment="Center" Height="24" Margin="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="148"/>
+        <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="75"/>
+        <DataGrid x:Name="dgPlatillosBusqueda" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="90" Width="319" Grid.Row="2" AutoGenerateColumns="False" ItemsSource="{Binding platillos}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding nombreRestaurante}" ClipboardContentBinding="{x:Null}" Header="Restaurante" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding platillos_id}" ClipboardContentBinding="{x:Null}" Header="id" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblDeClick" Content="Para más información, de doble click en el platillo deseado" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="324"/>
+
+    </Grid>
+</Window>

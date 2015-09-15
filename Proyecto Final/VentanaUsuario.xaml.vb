@@ -109,11 +109,14 @@ Public Class VentanaUsuario
         Me.Hide()
     End Sub
 
-    Private Sub menu_MenuEditar_Click(sender As Object, e As RoutedEventArgs) Handles menu_MenuEditar.Click
+    Private Sub menu_buscarPlatillo_Click(sender As Object, e As RoutedEventArgs) Handles menu_buscarPlatillo.Click
+        Dim ventanaBuscar As New VentanaBuscarPlatillo
+        ventanaBuscar.Owner = Me
+        ventanaBuscar.Show()
 
     End Sub
 
-    Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_Listar.Click
+    Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarCategorias.Click
         Dim ventanaClienteList As New VentanaClienteListar
         ventanaClienteList.Owner = Me
         ventanaClienteList.Show()

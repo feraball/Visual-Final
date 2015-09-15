@@ -108,3 +108,7 @@ C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto_Final.Re
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final.vbproj.GenerateResource.Cache
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.baml
 C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaClienteListar.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcionPlatillo.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaDescripcionPlatillo.g.vb
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.baml
+C:\Users\Kenneth\Desktop\Visual-Final\Proyecto Final\obj\Debug\VentanaBuscarPlatillo.g.vb

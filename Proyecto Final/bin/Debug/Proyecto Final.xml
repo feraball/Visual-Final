@@ -34,6 +34,22 @@ InitializeComponent
 	<summary>
 VentanaClienteListar
 </summary>
+</member><member name="M:Proyecto_Final.VentanaBuscarPlatillo.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Final.VentanaBuscarPlatillo">
+	<summary>
+VentanaBuscarPlatillo
+</summary>
+</member><member name="M:Proyecto_Final.VentanaDescripcionPlatillo.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Final.VentanaDescripcionPlatillo">
+	<summary>
+VentanaDescripcionPlatillo
+</summary>
 </member><member name="M:Proyecto_Final.VentanaUsuario.InitializeComponent">
 	<summary>
 InitializeComponent
