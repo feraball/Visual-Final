@@ -16,8 +16,8 @@ Public Class VentanaUsuario
         End Set
     End Property
 
-    ' Dim dbPath As String = "D:\restaurantes.mdb"
-    Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
+    Dim dbPath As String = "D:\restaurantes.mdb"
+    'Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim adapter2 As New OleDbDataAdapter
     Dim dbPath2 As String = ""
     Dim datos As New DataSet("Datos")
@@ -91,6 +91,24 @@ Public Class VentanaUsuario
             menu_listarCategorias.IsEnabled = False
             menu_listarPlatillos.IsEnabled = False
             menu_editarPlatillo.IsEnabled = False
+
+        End If
+        If (tipUsu = 3) Then
+            menu_MenuArchivo.IsEnabled = False
+            menu_editarPlatillo.IsEnabled = False
+            menu_listarRestaurantes.IsEnabled = False
+            menu_listarPlatillos.IsEnabled = False
+            lblRestaurante.Visibility = Windows.Visibility.Collapsed
+            lblRestauranteUsuario.Visibility = Windows.Visibility.Collapsed
+            cbxCategorias.Visibility = Windows.Visibility.Collapsed
+            txtBuscar.Visibility = Windows.Visibility.Collapsed
+            dtgGrillaDatos.Visibility = Windows.Visibility.Collapsed
+            lbl_newBD.Visibility = Windows.Visibility.Collapsed
+            imgCatalogoDelicias.Visibility = Windows.Visibility.Visible
+
+
+
+
 
         End If
     End Sub

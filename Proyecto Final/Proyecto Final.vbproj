@@ -180,5 +180,8 @@
     <Resource Include="Assets\search.png" />
     <Resource Include="Assets\users.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\catalogoDelicias.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

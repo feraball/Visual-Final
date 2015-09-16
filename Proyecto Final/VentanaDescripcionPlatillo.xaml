@@ -7,7 +7,7 @@
             <RowDefinition Height="23*"/>
             <RowDefinition Height="22*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgDescripcionPlatillo" Margin="0" VerticalAlignment="Center" Height="89" Width="495" AutoGenerateColumns="False" ItemsSource="{Binding platillos}" HorizontalAlignment="Center" Grid.Row="1">
+        <DataGrid x:Name="dgDescripcionPlatillo" Margin="0" VerticalAlignment="Center" Height="89" Width="495" AutoGenerateColumns="False" ItemsSource="{Binding platillos}" HorizontalAlignment="Center" Grid.Row="1" IsReadOnly="True" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding platillos_nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding temperatura}" ClipboardContentBinding="{x:Null}" Header="Temperatura" IsReadOnly="True"/>
@@ -16,7 +16,7 @@
                 <DataGridTextColumn Binding="{Binding restaurantes_nombre}" ClipboardContentBinding="{x:Null}" Header="Restaurante" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txtIdPlati" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsHitTestVisible="True" AllowDrop="True" BorderThickness="1"/>
+        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
