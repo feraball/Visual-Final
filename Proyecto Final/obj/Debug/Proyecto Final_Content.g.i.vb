@@ -11,5 +11,7 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/catalogodelicias.png")> 
+<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/heladoallinav.png"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/heladococo.png"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/heladovainilla.png")> 
 

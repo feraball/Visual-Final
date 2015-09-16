@@ -50,16 +50,23 @@ Partial Public Class VentanaDescripcionPlatillo
     #End ExternalSource
     
     
-    #ExternalSource("..\..\VentanaDescripcionPlatillo.xaml",10)
+    #ExternalSource("..\..\VentanaDescripcionPlatillo.xaml",11)
     <System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")>  _
     Friend WithEvents dgDescripcionPlatillo As System.Windows.Controls.DataGrid
     
     #End ExternalSource
     
     
-    #ExternalSource("..\..\VentanaDescripcionPlatillo.xaml",19)
+    #ExternalSource("..\..\VentanaDescripcionPlatillo.xaml",20)
     <System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")>  _
     Friend WithEvents btnRegresar As System.Windows.Controls.Button
+    
+    #End ExternalSource
+    
+    
+    #ExternalSource("..\..\VentanaDescripcionPlatillo.xaml",21)
+    <System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")>  _
+    Friend WithEvents imgPlatillo As System.Windows.Controls.Image
     
     #End ExternalSource
     
@@ -100,6 +107,10 @@ Partial Public Class VentanaDescripcionPlatillo
         End If
         If (connectionId = 3) Then
             Me.btnRegresar = CType(target,System.Windows.Controls.Button)
+            Return
+        End If
+        If (connectionId = 4) Then
+            Me.imgPlatillo = CType(target,System.Windows.Controls.Image)
             Return
         End If
         Me._contentLoaded = true

@@ -10,7 +10,7 @@ Public Class VentanaBuscarPlatillo
 
     Private Sub btnBuscar_Click(sender As Object, e As RoutedEventArgs) Handles btnBuscar.Click
         If txtBusqueda.Text = "" Then
-            MessageBox.Show("No ha ingresado información válida para la búsqueda")
+            MessageBox.Show("No ha ingresado información válida para la búsqueda", "Error en la búsqueda")
         Else
             Using conexion3 As New OleDbConnection(strConexion)
                 Dim datos3 As New DataSet("Datos3")

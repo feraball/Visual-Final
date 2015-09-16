@@ -22,6 +22,7 @@
         <DataGrid x:Name="dgCategorias" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="83" Width="490" ItemsSource="{Binding categorias}" Grid.Row="1" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="dataGridTextColumn" Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Título" IsReadOnly="True" CanUserSort="False" CanUserReorder="False"/>
+                <DataGridTextColumn Binding="{Binding platillos_ofrecidos}" CanUserSort="False" ClipboardContentBinding="{x:Null}" Header="Platillos Ofrecidos" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="dgPlatillosPorCategoria" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="82" Width="490" Grid.Row="3" AutoGenerateColumns="False" ItemsSource="{Binding platillos}" CanUserAddRows="False">

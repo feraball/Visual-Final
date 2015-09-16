@@ -20,17 +20,44 @@ Public Class VentanaClienteListar
             Dim consulta As String = "SELECT * FROM categorias ;"
             Dim adapter As New OleDbDataAdapter(consulta, conexion)
             adapter.Fill(datos, "categorias")
-            dgCategorias.DataContext = datos
+
+            Dim consulta2 As String = "SELECT * FROM platillos ;"
+            Dim adapter2 As New OleDbDataAdapter(consulta2, conexion)
+            adapter2.Fill(datos, "platillos")
 
             Dim tablaCategoria As DataTable = datos.Tables.Item(0)
-            For i = 0 To tablaCategoria.Rows.Count - 1
-                cbCategorias.Items.Add(tablaCategoria.Rows(i).Item(1))
+            Dim tablaPlatillos As DataTable = datos.Tables.Item(1)
+
+            tablaCategoria.Columns.Add("platillos_ofrecidos")
+
+            Dim cantidadFilasTablaCategoría = tablaCategoria.Rows.Count
+            Dim cantidadFilasPlatillos = tablaPlatillos.Rows.Count
+
+            'MessageBox.Show(tablaCategoria.Rows(1).Item(2))
+
+            For i = 0 To cantidadFilasTablaCategoría - 1
+                tablaCategoria.Rows(i).Item(2) = 0
             Next
 
-            Dim textNumeroPlatillosOfrecidos As New DataGridTextColumn()
-            textNumeroPlatillosOfrecidos.Header = "Número platillos ofrecidos"
-            textNumeroPlatillosOfrecidos.IsReadOnly = True
-            dgCategorias.Columns.Add(textNumeroPlatillosOfrecidos)
+            For i = 0 To cantidadFilasTablaCategoría - 1
+                For j = 0 To cantidadFilasPlatillos - 1
+                    If tablaCategoria.Rows(i).Item(0) = tablaPlatillos.Rows(j).Item(4) Then
+                        tablaCategoria.Rows(i).Item(2) = tablaCategoria.Rows(i).Item(2) + 1
+
+                    End If
+                Next
+
+            Next
+
+
+
+            dgCategorias.DataContext = datos
+
+
+
+            For i = 0 To cantidadFilasTablaCategoría - 1
+                cbCategorias.Items.Add(tablaCategoria.Rows(i).Item(1))
+            Next
 
         End Using
 
