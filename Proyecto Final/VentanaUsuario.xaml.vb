@@ -28,7 +28,10 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub mitNewPlatillo_Click(sender As Object, e As RoutedEventArgs) Handles menu_NewPlatillo.Click
-
+        Dim ventanaNuevoPlatillo As New VentanaNuevoPlatillo
+        ventanaNuevoPlatillo.Owner = Me
+        ventanaNuevoPlatillo.Show()
+        Me.IsEnabled = False
     End Sub
 
 

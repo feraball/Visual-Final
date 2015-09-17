@@ -143,3 +143,6 @@ C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyect
 C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.exe
 C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.pdb
 C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\bin\Debug\Proyecto Final.xml
+C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\obj\Debug\VentanaNuevoPlatillo.g.vb
+C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\obj\Debug\Proyecto Final_MarkupCompile.lref
+C:\Users\Fernando\Documents\GitHub\Visual-Final\Proyecto Final\obj\Debug\VentanaNuevoPlatillo.baml

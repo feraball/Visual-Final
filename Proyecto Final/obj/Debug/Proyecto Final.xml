@@ -36,6 +36,16 @@ VentanaDescripcionPlatillo
 InitializeComponent
 </summary>
 </member>
+<member name="T:Proyecto_Final.VentanaNuevoPlatillo">
+<summary>
+VentanaNuevoPlatillo
+</summary>
+</member>
+<member name="M:Proyecto_Final.VentanaNuevoPlatillo.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:Proyecto_Final.VentanaPlatilosPorRestaurante">
 <summary>
 VentanaPlatilosPorRestaurante
