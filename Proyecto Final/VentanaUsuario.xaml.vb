@@ -21,7 +21,9 @@ Public Class VentanaUsuario
     'Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
     Dim adapter2 As New OleDbDataAdapter
     Dim dbPath2 As String = ""
+
     Dim datos As New DataSet("Datos")
+    Dim consulta As String
     Dim strConexion As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath
     Private Sub mitSalir_Click(sender As Object, e As RoutedEventArgs) Handles menu_Salir.Click
         End
@@ -42,15 +44,15 @@ Public Class VentanaUsuario
         'dtgRestaurantes.Visibility = Windows.Visibility.Hidden
         verificarTipoUsuario()
 
-        Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "SELECT u.nombre, tu.tipo FROM usuarios u INNER JOIN tipoUsuario tu ON u.rol = tu.id;"
-            Dim adapter As New OleDbDataAdapter(consulta, conexion)
+        'Using conexion As New OleDbConnection(strConexion)
+        '    Dim consulta As String = "SELECT u.nombre, tu.tipo FROM usuarios u INNER JOIN tipoUsuario tu ON u.rol = tu.id;"
+        '    Dim adapter As New OleDbDataAdapter(consulta, conexion)
 
-            Dim datos2 As New DataSet("Datos")
-            adapter.Fill(datos2, "usuarios")
+        '    Dim datos2 As New DataSet("Datos")
+        '    adapter.Fill(datos2, "usuarios")
 
-            dtgGrillaDatos.DataContext = datos2
-        End Using
+        '    dtgGrillaDatos.DataContext = datos2
+        'End Using
     End Sub
 
     Private Sub mitAcercaDe_Click(sender As Object, e As RoutedEventArgs) Handles mitAcercaDe.Click
@@ -59,19 +61,27 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_listarRestaurantes_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarRestaurantes.Click
-        'dtgRestaurantes.Visibility = Windows.Visibility.Visible
-        dtgRestaurantes.IsEnabled = True
+        leerRestaurante()
         lbl_listaResta.Visibility = Windows.Visibility.Visible
+        dtgGrillaDatos.Visibility = Windows.Visibility.Hidden
+        dtgRestaurantes.Visibility = Windows.Visibility.Visible
+        dtgRestaurantes.DataContext = datos
+    End Sub
+
+    Private Sub leerRestaurante()
+        If usuarioActivo.tipUsu = "Administrador" Then
+            consulta = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
+        Else
+            consulta = "SELECT r.nombre FROM restaurantes r WHERE r.asistenteId = " & usuarioActivo.Id
+        End If
+
         Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
 
             Dim comando As OleDbCommand = New OleDbCommand(consulta, conexion)
             adapter2.SelectCommand = comando
 
             adapter2.Fill(datos, "restaurantes")
 
-            dtgGrillaDatos.Visibility = Windows.Visibility.Hidden
-            dtgRestaurantes.DataContext = datos
         End Using
     End Sub
 
@@ -89,6 +99,7 @@ Public Class VentanaUsuario
             Case "Administrador"
                 menu_importarXml.IsEnabled = True
                 menu_listarRestaurantes.IsEnabled = True
+                dtgRestaurantes.Visibility = Visibility.Visible
             Case "Asistente de Restaurante"
                 menu_NewPlatillo.IsEnabled = True
                 menu_listarPlatillos.IsEnabled = True
@@ -135,16 +146,43 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarCategorias.Click
-        Dim ventanaClienteList As New VentanaClienteListar
-        ventanaClienteList.Owner = Me
-        ventanaClienteList.Show()
+        cbxCategorias.Items.Clear()
+        Try
+            datos.Tables("categorias").Clear()
+            datos.Tables("platillos").Clear()
+        Catch ex As Exception
 
+        End Try
+
+        Select Case usuarioActivo.tipUsu
+            Case "Asistente de Restaurante"
+                cbxCategorias.IsEnabled = True
+                lbl_listaResta.Visibility = Visibility.Visible
+                lbl_listaResta.Content = "Lista de Platillos por Categoría en Mi Restaurante"
+
+                dtgGrillaDatos.IsEnabled = False
+                dtgGrillaDatos.Visibility = Visibility.Visible
+
+                Using conexion As New OleDbConnection(strConexion)
+                    consulta = "SELECT * FROM categorias"
+                    Dim adapter As New OleDbDataAdapter(consulta, conexion)
+                    adapter.Fill(datos, "categorias")
+
+                    For Each row As DataRow In datos.Tables("categorias").Rows
+                        cbxCategorias.Items.Add(row.Item(1))
+                    Next
+                End Using
+
+            'cbxCategorias.SelectedIndex = 0
+
+            Case "Cliente"
+                Dim ventanaClienteList As New VentanaClienteListar
+                ventanaClienteList.Owner = Me
+                ventanaClienteList.Show()
+        End Select
 
     End Sub
 
-    Private Sub dtgGrillaDatos_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgGrillaDatos.SelectionChanged
-
-    End Sub
 
     Private Sub menu_importarXml_Click(sender As Object, e As RoutedEventArgs) Handles menu_importarXml.Click
 
@@ -189,7 +227,6 @@ Public Class VentanaUsuario
     Private Sub guardarBase()
 
 
-
     End Sub
 
 
@@ -197,5 +234,52 @@ Public Class VentanaUsuario
         usuarioActivo = New Usuario(id, usuario, clave, nombre, tipoUsuario)
         lblNombreUsuario.Content = usuarioActivo.Nombre
         lblTipoUsuario.Content = usuarioActivo.tipUsu
+        If usuarioActivo.tipUsu = "Asistente de Restaurante" Then
+            leerRestaurante()
+            lblRestauranteUsuario.Content = datos.Tables("restaurantes").Rows(0).Item(0)
+        Else
+            lblRestauranteUsuario.Content = "No asociado"
+        End If
+
+    End Sub
+
+    Private Sub cargarPlatillos(consulta As String)
+        Try
+            datos.Tables("platillos").Clear()
+        Catch ex As Exception
+        End Try
+
+        Using conexion As New OleDbConnection(strConexion)
+
+            Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            adapter.Fill(datos, "platillos")
+
+            dtgGrillaDatos.DataContext = datos
+        End Using
+    End Sub
+
+    Private Sub menu_listarPlatillos_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarPlatillos.Click
+        cbxCategorias.IsEnabled = False
+        cbxCategorias.Items.Clear()
+        lbl_listaResta.Visibility = Visibility.Visible
+        lbl_listaResta.Content = "Lista de Todos los Platillos en Mi Restaurante"
+
+        consulta = "SELECT p.nombre FROM restaurantes r INNER JOIN platillos p ON r.id = p.restauranteId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ")"
+        cargarPlatillos(consulta)
+
+    End Sub
+
+    Private Sub cbxCategorias_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbxCategorias.SelectionChanged
+        dtgGrillaDatos.IsEnabled = True
+
+        Dim catID As Integer = cbxCategorias.SelectedIndex() + 1
+
+        consulta = "SELECT p.nombre FROM restaurantes r INNER JOIN platillos p ON r.id = p.restauranteId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ") AND (p.categoriaId = " & catID.ToString & ")"
+        cargarPlatillos(consulta)
+
+    End Sub
+
+    Private Sub dtgGrillaDatos_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgGrillaDatos.SelectionChanged
+
     End Sub
 End Class

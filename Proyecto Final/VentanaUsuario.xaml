@@ -9,8 +9,8 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="169*"/>
@@ -28,8 +28,8 @@
             <MenuItem x:Name="menu_MenuEditar" Header="Herramientas">
                 <MenuItem x:Name="menu_buscarPlatillo" Header="Buscar Platillo" IsEnabled="False"/>
                 <MenuItem x:Name="menu_Listar" Header="Listar...">
-                    <MenuItem x:Name="menu_listarCategorias" Header="Listar Categorías" IsEnabled="False"/>
                     <MenuItem x:Name="menu_listarPlatillos" Header="Listar Platillos" IsEnabled="False"/>
+                    <MenuItem x:Name="menu_listarCategorias" Header="Listar Platillos por Categoría" IsEnabled="False"/>
                     <MenuItem x:Name="menu_listarRestaurantes" Header="Listar Restaurantes" IsEnabled="False"/>
                 </MenuItem>
                 <MenuItem x:Name="menu_editarPlatillo" Header="Editar Platillo" IsEnabled="False"/>
@@ -38,17 +38,17 @@
                 <MenuItem x:Name="mitAcercaDe" Header="Acerca de..."/>
             </MenuItem>
         </Menu>
-        <Label x:Name="lblTU" Content="Tipo de Usuario:" HorizontalAlignment="Right" Margin="0,12,10,13" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="96" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-        <Label x:Name="lblNombre" Content="Nombre:" HorizontalAlignment="Right" Margin="0,13,10,12" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="96" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-        <Label x:Name="lblRestaurante" Content="Restaurante:" HorizontalAlignment="Right" Margin="0,13,10,13" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="96" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-        <ComboBox x:Name="cbxCategorias" HorizontalAlignment="Center" Margin="20,12,21,13" Grid.Row="4" VerticalAlignment="Center" Width="140" Height="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="txtBuscar" Grid.Column="1" HorizontalAlignment="Center" Height="26" Margin="0" Grid.Row="4" TextWrapping="Wrap" Text="Buscar Platillo" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center" Padding="5,0,0,0" IsEnabled="False"/>
+        <Label x:Name="lblTU" Content="Tipo de Usuario:" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="96" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblNombre" Content="Nombre:" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="96" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblRestaurante" Content="Restaurante:" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="96" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxCategorias" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="140" Height="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="txtBuscar" Grid.Column="2" HorizontalAlignment="Center" Height="26" Margin="0" Grid.Row="4" TextWrapping="Wrap" Text="Buscar Platillo" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center" Padding="5,0,0,0" IsEnabled="False"/>
         <Image x:Name="imgFotoUsuario" Grid.Column="2" HorizontalAlignment="Center" Height="120" Margin="56.443,17,56.557,17" Grid.RowSpan="3" VerticalAlignment="Center" Width="120" RenderTransformOrigin="0.49,0.51" Grid.Row="1" Source="Assets/users.png"/>
-        <DataGrid x:Name="dtgGrillaDatos" Margin="10" Grid.Row="6" Grid.ColumnSpan="3" ItemsSource="{Binding Path=usuarios}" Visibility="Hidden"/>
-        <Label x:Name="lblTipoUsuario" Grid.Column="1" HorizontalAlignment="Left" Margin="10,12,0,13" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
-        <Label x:Name="lblNombreUsuario" Grid.Column="1" HorizontalAlignment="Left" Margin="10,13,0,12" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
-        <Label x:Name="lblRestauranteUsuario" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="10,13,0,13" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
-        <DataGrid x:Name="dtgRestaurantes" Margin="10" Grid.Row="6" AutoGenerateColumns="False" ItemsSource="{Binding Path=restaurantes}" EnableRowVirtualization="False" Grid.ColumnSpan="3" IsEnabled="False" >
+        <DataGrid x:Name="dtgGrillaDatos" Margin="10" Grid.Row="6" Grid.ColumnSpan="3" ItemsSource="{Binding Path=platillos}" CanUserAddRows="False" IsReadOnly="True"/>
+        <Label x:Name="lblTipoUsuario" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
+        <Label x:Name="lblNombreUsuario" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
+        <Label x:Name="lblRestauranteUsuario" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="140" BorderThickness="0" Background="#FFCBFFCD"/>
+        <DataGrid x:Name="dtgRestaurantes" Margin="10" Grid.Row="6" AutoGenerateColumns="False" ItemsSource="{Binding Path=restaurantes}" EnableRowVirtualization="False" Grid.ColumnSpan="3" Visibility="Hidden" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding nombre}"  Header="Nombre" />
                 <DataGridTextColumn Binding="{Binding direccion}"  Header="Direccion" />
@@ -57,9 +57,10 @@
                 <DataGridTextColumn Binding="{Binding nombreasis}"  Header="Asistente" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="lbl_listaResta" Content="Lista de Restaurantes" Grid.Column="1" Margin="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="26" Visibility="Hidden"/>
+        <Label x:Name="lbl_listaResta" Content="Lista de Restaurantes" Margin="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="26" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
         <Label x:Name="lbl_newBD" Content="Cero" HorizontalAlignment="Left" Margin="34,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="517" Grid.ColumnSpan="3"/>
         <Image x:Name="imgCatalogoDelicias" HorizontalAlignment="Left" Height="192" Margin="20,15,0,0" Grid.Row="4" VerticalAlignment="Top" Width="551" Grid.ColumnSpan="3" Source="Assets/catalogoDelicias.png" Stretch="Fill" Grid.RowSpan="3" Visibility="Collapsed"/>
+        <Label x:Name="lblCategoria" Content="Escoger Categoría:" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="4" VerticalAlignment="Center" Height="26" Width="116" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
     </Grid>
 </Window>
