@@ -28,6 +28,11 @@ Class MainWindow
                 ventanaUser.Owner = Me
                 ventanaUser.Show()
 
+                txtUser.Text = ""
+                txtPass.Password = ""
+                txtUser_LostFocus(txtUser, New RoutedEventArgs)
+                txtPass_LostFocus(txtPass, New RoutedEventArgs)
+
                 Me.Hide()
                 Exit Sub
             End If

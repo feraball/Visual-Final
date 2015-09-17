@@ -36,12 +36,12 @@ VentanaDescripcionPlatillo
 InitializeComponent
 </summary>
 </member>
-<member name="T:Proyecto_Final.VentanaNuevoPlatillo">
+<member name="T:Proyecto_Final.VentanaPlatillo">
 <summary>
-VentanaNuevoPlatillo
+VentanaPlatillo
 </summary>
 </member>
-<member name="M:Proyecto_Final.VentanaNuevoPlatillo.InitializeComponent">
+<member name="M:Proyecto_Final.VentanaPlatillo.InitializeComponent">
 <summary>
 InitializeComponent
 </summary>

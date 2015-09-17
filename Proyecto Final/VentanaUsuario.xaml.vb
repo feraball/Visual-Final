@@ -30,7 +30,7 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub mitNewPlatillo_Click(sender As Object, e As RoutedEventArgs) Handles menu_NewPlatillo.Click
-        Dim ventanaNuevoPlatillo As New VentanaNuevoPlatillo
+        Dim ventanaNuevoPlatillo As New VentanaPlatillo
         ventanaNuevoPlatillo.Owner = Me
         ventanaNuevoPlatillo.Show()
         Me.IsEnabled = False
@@ -39,20 +39,10 @@ Public Class VentanaUsuario
 
 
     Private Sub frmVentanaUsuario_Loaded(sender As Object, e As RoutedEventArgs) Handles frmVentanaUsuario.Loaded
-
-
-        'dtgRestaurantes.Visibility = Windows.Visibility.Hidden
         verificarTipoUsuario()
 
-        'Using conexion As New OleDbConnection(strConexion)
-        '    Dim consulta As String = "SELECT u.nombre, tu.tipo FROM usuarios u INNER JOIN tipoUsuario tu ON u.rol = tu.id;"
-        '    Dim adapter As New OleDbDataAdapter(consulta, conexion)
+        'datos.Tables.Add("platillos")
 
-        '    Dim datos2 As New DataSet("Datos")
-        '    adapter.Fill(datos2, "usuarios")
-
-        '    dtgGrillaDatos.DataContext = datos2
-        'End Using
     End Sub
 
     Private Sub mitAcercaDe_Click(sender As Object, e As RoutedEventArgs) Handles mitAcercaDe.Click
@@ -86,13 +76,16 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_cerrarSesion_Click(sender As Object, e As RoutedEventArgs) Handles menu_cerrarSesion.Click
-
-        ventanaPrincipal = Owner
-        ventanaPrincipal.txtUser.Text = "Usuario"
-        ventanaPrincipal.txtPass.Password = "Visual"
-        ventanaPrincipal.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
+
+
+    Private Sub frmVentanaUsuario_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles frmVentanaUsuario.Closing
+        ventanaPrincipal = Me.Owner
+        ventanaPrincipal.txtUser.Focus()
+        ventanaPrincipal.Show()
+    End Sub
+
 
     Private Sub verificarTipoUsuario()
         Select Case usuarioActivo.tipUsu
@@ -119,9 +112,6 @@ Public Class VentanaUsuario
         End Select
     End Sub
 
-    Private Sub frmVentanaUsuario_Closed(sender As Object, e As EventArgs) Handles frmVentanaUsuario.Closed
-        End
-    End Sub
 
     Private Sub dtgRestaurantes_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgRestaurantes.SelectionChanged
         Dim fila As DataRowView = sender.SelectedItem
@@ -146,10 +136,10 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarCategorias.Click
-        cbxCategorias.Items.Clear()
         Try
-            datos.Tables("categorias").Clear()
+            cbxCategorias.Items.Clear()
             datos.Tables("platillos").Clear()
+            datos.Tables("categorias").Clear()
         Catch ex As Exception
 
         End Try
@@ -162,6 +152,9 @@ Public Class VentanaUsuario
 
                 dtgGrillaDatos.IsEnabled = False
                 dtgGrillaDatos.Visibility = Visibility.Visible
+                dtgGrillaDatos.Columns(0).Visibility = Visibility.Hidden
+                dtgGrillaDatos.Columns(1).Visibility = Visibility.Hidden
+                dtgGrillaDatos.Columns(2).Visibility = Visibility.Hidden
 
                 Using conexion As New OleDbConnection(strConexion)
                     consulta = "SELECT * FROM categorias"
@@ -244,6 +237,7 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub cargarPlatillos(consulta As String)
+        dtgGrillaDatos.Columns(0).Visibility = Visibility.Visible
         Try
             datos.Tables("platillos").Clear()
         Catch ex As Exception
@@ -259,14 +253,19 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_listarPlatillos_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarPlatillos.Click
+
         cbxCategorias.IsEnabled = False
         cbxCategorias.Items.Clear()
         lbl_listaResta.Visibility = Visibility.Visible
         lbl_listaResta.Content = "Lista de Todos los Platillos en Mi Restaurante"
+        dtgGrillaDatos.Visibility = Visibility.Visible
+        dtgGrillaDatos.IsEnabled = True
 
-        consulta = "SELECT p.nombre FROM restaurantes r INNER JOIN platillos p ON r.id = p.restauranteId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ")"
+        consulta = "SELECT p.nombre AS Titulo, c.nombre AS Categoria, p.tipo AS Tipo FROM categorias c INNER JOIN (restaurantes r INNER JOIN platillos p ON r.id = p.restauranteId) ON c.id = p.categoriaId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ")"
+
         cargarPlatillos(consulta)
-
+        dtgGrillaDatos.Columns(1).Visibility = Visibility.Visible
+        dtgGrillaDatos.Columns(2).Visibility = Visibility.Visible
     End Sub
 
     Private Sub cbxCategorias_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbxCategorias.SelectionChanged
@@ -274,7 +273,7 @@ Public Class VentanaUsuario
 
         Dim catID As Integer = cbxCategorias.SelectedIndex() + 1
 
-        consulta = "SELECT p.nombre FROM restaurantes r INNER JOIN platillos p ON r.id = p.restauranteId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ") AND (p.categoriaId = " & catID.ToString & ")"
+        consulta = "Select p.nombre As Titulo FROM restaurantes r INNER JOIN platillos p On r.id = p.restauranteId WHERE (r.asistenteId = " & usuarioActivo.Id.ToString & ") And (p.categoriaId = " & catID.ToString & ")"
         cargarPlatillos(consulta)
 
     End Sub
@@ -282,4 +281,6 @@ Public Class VentanaUsuario
     Private Sub dtgGrillaDatos_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dtgGrillaDatos.SelectionChanged
 
     End Sub
+
+
 End Class

@@ -78,8 +78,8 @@
     <Compile Include="VentanaDescripcionPlatillo.xaml.vb">
       <DependentUpon>VentanaDescripcionPlatillo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevoPlatillo.xaml.vb">
-      <DependentUpon>VentanaNuevoPlatillo.xaml</DependentUpon>
+    <Compile Include="VentanaPlatillo.xaml.vb">
+      <DependentUpon>VentanaPlatillo.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaPlatilosPorRestaurante.xaml.vb">
       <DependentUpon>VentanaPlatilosPorRestaurante.xaml</DependentUpon>
@@ -111,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VentanaNuevoPlatillo.xaml">
+    <Page Include="VentanaPlatillo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
