@@ -13,7 +13,7 @@ Class MainWindow
 
     Private Sub frmLogin_Loaded(sender As Object, e As RoutedEventArgs) Handles frmLogin.Loaded
         Using conexion As New OleDbConnection(strConexion)
-            Dim consulta As String = "SELECT * FROM usuarios;"
+            Dim consulta As String = "SELECT * FROM usuarios u INNER JOIN tipoUsuario tipo ON u.rol = tipo.id;"
             Dim adapter As New OleDbDataAdapter(consulta, conexion)
             adapter.Fill(datos, "usuarios")
         End Using
@@ -24,9 +24,10 @@ Class MainWindow
         For Each fila As DataRow In datos.Tables("usuarios").Rows
             If fila.Item(1) = txtUser.Text And fila.Item(2) = txtPass.Password Then
                 ventanaUser = New VentanaUsuario
-                ventanaUser.tipUsu = fila.Item(4)
+                ventanaUser.AsignarUsuario(fila.Item(0), fila.Item(1), fila.Item(2), fila.Item(3), fila.Item(6))
                 ventanaUser.Owner = Me
                 ventanaUser.Show()
+
                 Me.Hide()
                 Exit Sub
             End If

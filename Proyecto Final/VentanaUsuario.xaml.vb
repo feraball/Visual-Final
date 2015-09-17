@@ -5,16 +5,17 @@ Imports Microsoft.Win32
 Public Class VentanaUsuario
 
     Private ventanaPrincipal As MainWindow
+    Public usuarioActivo As Usuario
 
-    Private _tipoUsuario As String
-    Public Property tipUsu() As String
-        Get
-            Return _tipoUsuario
-        End Get
-        Set(ByVal value As String)
-            _tipoUsuario = value
-        End Set
-    End Property
+    'Private _tipoUsuario As String
+    'Public Property tipUsu() As String
+    '    Get
+    '        Return _tipoUsuario
+    '    End Get
+    '    Set(ByVal value As String)
+    '        _tipoUsuario = value
+    '    End Set
+    'End Property
 
     Dim dbPath As String = "D:\restaurantes.mdb"
     'Dim dbPath As String = "C:\Users\Carlos Leon\Desktop\VISUAL FINAL\restaurantes.mdb"
@@ -35,11 +36,8 @@ Public Class VentanaUsuario
     Private Sub frmVentanaUsuario_Loaded(sender As Object, e As RoutedEventArgs) Handles frmVentanaUsuario.Loaded
 
 
-        dtgRestaurantes.Visibility = Windows.Visibility.Hidden
-        lbl_listaResta.Visibility = Windows.Visibility.Hidden
+        'dtgRestaurantes.Visibility = Windows.Visibility.Hidden
         verificarTipoUsuario()
-
-
 
         Using conexion As New OleDbConnection(strConexion)
             Dim consulta As String = "SELECT u.nombre, tu.tipo FROM usuarios u INNER JOIN tipoUsuario tu ON u.rol = tu.id;"
@@ -58,7 +56,8 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub menu_listarRestaurantes_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarRestaurantes.Click
-        dtgRestaurantes.Visibility = Windows.Visibility.Visible
+        'dtgRestaurantes.Visibility = Windows.Visibility.Visible
+        dtgRestaurantes.IsEnabled = True
         lbl_listaResta.Visibility = Windows.Visibility.Visible
         Using conexion As New OleDbConnection(strConexion)
             Dim consulta As String = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
@@ -81,36 +80,29 @@ Public Class VentanaUsuario
         ventanaPrincipal.Show()
         Me.Hide()
     End Sub
+
     Private Sub verificarTipoUsuario()
-        If (tipUsu = 1) Then
-            dtgRestaurantes.Visibility = Windows.Visibility.Hidden
-            lbl_listaResta.Visibility = Windows.Visibility.Hidden
+        Select Case usuarioActivo.tipUsu
+            Case "Administrador"
+                menu_importarXml.IsEnabled = True
+                menu_listarRestaurantes.IsEnabled = True
+            Case "Asistente de Restaurante"
+                menu_NewPlatillo.IsEnabled = True
+                menu_listarPlatillos.IsEnabled = True
+                menu_listarCategorias.IsEnabled = True
 
-            menu_NewPlatillo.IsEnabled = False
-            menu_buscarPlatillo.IsEnabled = False
-            menu_listarCategorias.IsEnabled = False
-            menu_listarPlatillos.IsEnabled = False
-            menu_editarPlatillo.IsEnabled = False
+            Case "Cliente"
+                menu_buscarPlatillo.IsEnabled = True
+                menu_listarCategorias.IsEnabled = True
 
-        End If
-        If (tipUsu = 3) Then
-            menu_MenuArchivo.IsEnabled = False
-            menu_editarPlatillo.IsEnabled = False
-            menu_listarRestaurantes.IsEnabled = False
-            menu_listarPlatillos.IsEnabled = False
-            lblRestaurante.Visibility = Windows.Visibility.Collapsed
-            lblRestauranteUsuario.Visibility = Windows.Visibility.Collapsed
-            cbxCategorias.Visibility = Windows.Visibility.Collapsed
-            txtBuscar.Visibility = Windows.Visibility.Collapsed
-            dtgGrillaDatos.Visibility = Windows.Visibility.Collapsed
-            lbl_newBD.Visibility = Windows.Visibility.Collapsed
-            imgCatalogoDelicias.Visibility = Windows.Visibility.Visible
-
-
-
-
-
-        End If
+                lblRestaurante.Visibility = Windows.Visibility.Collapsed
+                lblRestauranteUsuario.Visibility = Windows.Visibility.Collapsed
+                cbxCategorias.Visibility = Windows.Visibility.Collapsed
+                txtBuscar.Visibility = Windows.Visibility.Collapsed
+                dtgGrillaDatos.Visibility = Windows.Visibility.Collapsed
+                lbl_newBD.Visibility = Windows.Visibility.Collapsed
+                imgCatalogoDelicias.Visibility = Windows.Visibility.Visible
+        End Select
     End Sub
 
     Private Sub frmVentanaUsuario_Closed(sender As Object, e As EventArgs) Handles frmVentanaUsuario.Closed
@@ -197,4 +189,10 @@ Public Class VentanaUsuario
 
     End Sub
 
+
+    Friend Sub AsignarUsuario(id As String, usuario As String, clave As String, nombre As String, tipoUsuario As String)
+        usuarioActivo = New Usuario(id, usuario, clave, nombre, tipoUsuario)
+        lblNombreUsuario.Content = usuarioActivo.Nombre
+        lblTipoUsuario.Content = usuarioActivo.tipUsu
+    End Sub
 End Class
