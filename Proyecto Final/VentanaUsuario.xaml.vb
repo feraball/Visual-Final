@@ -30,8 +30,15 @@ Public Class VentanaUsuario
     End Sub
 
     Private Sub mitNewPlatillo_Click(sender As Object, e As RoutedEventArgs) Handles menu_NewPlatillo.Click
+        cargarCategorias()
         Dim ventanaNuevoPlatillo As New VentanaPlatillo
         ventanaNuevoPlatillo.Owner = Me
+        ventanaNuevoPlatillo.resId = datos.Tables("restaurantes").Rows(0).Item(0)
+
+        For Each comboItem As String In cbxCategorias.Items
+            ventanaNuevoPlatillo.cbxCategorias.Items.Add(comboItem)
+        Next
+
         ventanaNuevoPlatillo.Show()
         Me.IsEnabled = False
     End Sub
@@ -62,7 +69,7 @@ Public Class VentanaUsuario
         If usuarioActivo.tipUsu = "Administrador" Then
             consulta = "SELECT r.id, r.nombre, r.direccion, r.telefono, r.duenio, u.nombre as nombreasis FROM restaurantes r INNER JOIN usuarios u ON r.asistenteId = u.id;"
         Else
-            consulta = "SELECT r.nombre FROM restaurantes r WHERE r.asistenteId = " & usuarioActivo.Id
+            consulta = "SELECT r.id, r.nombre FROM restaurantes r WHERE r.asistenteId = " & usuarioActivo.Id
         End If
 
         Using conexion As New OleDbConnection(strConexion)
@@ -128,6 +135,25 @@ Public Class VentanaUsuario
         Me.Hide()
     End Sub
 
+    Private Sub cargarCategorias()
+        Try
+            cbxCategorias.Items.Clear()
+            datos.Tables("categorias").Clear()
+        Catch ex As Exception
+
+        End Try
+
+        Using conexion As New OleDbConnection(strConexion)
+            consulta = "SELECT * FROM categorias"
+            Dim adapter As New OleDbDataAdapter(consulta, conexion)
+            adapter.Fill(datos, "categorias")
+
+            For Each row As DataRow In datos.Tables("categorias").Rows
+                cbxCategorias.Items.Add(row.Item(1))
+            Next
+        End Using
+    End Sub
+
     Private Sub menu_buscarPlatillo_Click(sender As Object, e As RoutedEventArgs) Handles menu_buscarPlatillo.Click
         Dim ventanaBuscar As New VentanaBuscarPlatillo
         ventanaBuscar.Owner = Me
@@ -137,9 +163,7 @@ Public Class VentanaUsuario
 
     Private Sub menu_listarCategorias_Click(sender As Object, e As RoutedEventArgs) Handles menu_listarCategorias.Click
         Try
-            cbxCategorias.Items.Clear()
             datos.Tables("platillos").Clear()
-            datos.Tables("categorias").Clear()
         Catch ex As Exception
 
         End Try
@@ -156,15 +180,7 @@ Public Class VentanaUsuario
                 dtgGrillaDatos.Columns(1).Visibility = Visibility.Hidden
                 dtgGrillaDatos.Columns(2).Visibility = Visibility.Hidden
 
-                Using conexion As New OleDbConnection(strConexion)
-                    consulta = "SELECT * FROM categorias"
-                    Dim adapter As New OleDbDataAdapter(consulta, conexion)
-                    adapter.Fill(datos, "categorias")
-
-                    For Each row As DataRow In datos.Tables("categorias").Rows
-                        cbxCategorias.Items.Add(row.Item(1))
-                    Next
-                End Using
+                cargarCategorias()
 
             'cbxCategorias.SelectedIndex = 0
 
@@ -229,7 +245,7 @@ Public Class VentanaUsuario
         lblTipoUsuario.Content = usuarioActivo.tipUsu
         If usuarioActivo.tipUsu = "Asistente de Restaurante" Then
             leerRestaurante()
-            lblRestauranteUsuario.Content = datos.Tables("restaurantes").Rows(0).Item(0)
+            lblRestauranteUsuario.Content = datos.Tables("restaurantes").Rows(0).Item(1)
         Else
             lblRestauranteUsuario.Content = "No asociado"
         End If
